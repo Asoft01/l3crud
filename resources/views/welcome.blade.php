@@ -30,5 +30,4 @@
        @livewire('counter')
     </div>
 </body>
-
 </html>
