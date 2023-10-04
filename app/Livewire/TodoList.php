@@ -15,6 +15,7 @@ class TodoList extends Component
     public $name; 
     public $search;
     public $editingTodoID; 
+    #[Rule('required|min:3|max:50')]
     public $editingTodoName;
 
     public function create(){
@@ -32,6 +33,8 @@ class TodoList extends Component
         $this->reset('name');
 
         session()->flash('success', 'created');
+
+        $this->resetPage();
     }
 
     public function delete($todoID){
@@ -59,7 +62,15 @@ class TodoList extends Component
     }
 
     public function update(){
-        
+        $this->validateOnly('editingTodoName');
+
+        Todo::find($this->editingTodoID)->update(
+            [
+                'name' => $this->editingTodoName
+            ]
+        );
+
+        $this->cancelEdit();
     }
 
     public function render()
