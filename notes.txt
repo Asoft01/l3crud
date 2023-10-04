@@ -1,2 +1,3 @@
 composer require livewire/livewire "^3.0@beta"
 php artisan livewire:layout
+php artisan livewire:make TodoList
