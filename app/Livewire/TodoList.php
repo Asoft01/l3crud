@@ -14,6 +14,9 @@ class TodoList extends Component
     
     public $name; 
     public $search;
+    public $editingTodoID; 
+    public $editingTodoName;
+
     public function create(){
         // dd('test');
         // validate 
@@ -43,6 +46,20 @@ class TodoList extends Component
         $todo = Todo::find($todoID); 
         $todo->completed = !$todo->completed; 
         $todo->save();
+    }
+
+    public function edit($todoID){
+        $this->editingTodoID = $todoID; 
+        $this->editingTodoName = Todo::find($todoID)->name;
+
+    }
+
+    public function cancelEdit(){
+        $this->reset('editingTodoID', 'editingTodoName');
+    }
+
+    public function update(){
+        
     }
 
     public function render()
