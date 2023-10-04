@@ -30,11 +30,31 @@ class TodoList extends Component
 
         session()->flash('success', 'created');
     }
+
+    public function delete($todoID){
+        Todo::find($todoID)->delete();
+    }
+
+    // public function delete(Todo $todo){
+    //     $todo->delete();
+    // }
+
+    public function toggle($todoID){
+        $todo = Todo::find($todoID); 
+        $todo->completed = !$todo->completed; 
+        $todo->save();
+    }
+
     public function render()
     {
+        // return view('livewire.todo-list', [
+        //     // 'todos' => Todo::latest()->get()
+        //     'todos' => Todo::latest()->paginate(5)
+        // ]);
+
         return view('livewire.todo-list', [
             // 'todos' => Todo::latest()->get()
-            'todos' => Todo::latest()->paginate(5)
+            'todos' => Todo::latest()->where('name', 'like', "%{$this->search}%")->paginate(5)
         ]);
     }
 }
