@@ -14,11 +14,13 @@ class TodoList extends Component
     #[Rule('required|min:3|max:50')]
     
     public $name; 
-    public $search;
+    
     public $editingTodoID; 
     #[Rule('required|min:3|max:50')]
     public $editingTodoName;
 
+    
+    public $search;
     public function create(){
         // dd('test');
         // validate 
