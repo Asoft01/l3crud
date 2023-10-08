@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\CreateCustomer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,6 @@ Route::get('/navigation', function (){
 Route::get('/home', function (){
     return view('home');
 });
+
+Route::get('/customers/create', CreateCustomer::class);
+// Route::
