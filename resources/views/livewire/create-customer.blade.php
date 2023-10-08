@@ -12,18 +12,18 @@
             Create Customer
         </h5>
         <div class="card-body">
-            <form>
+            <form wire:submit="save">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input wire:model ="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input wire:model = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Phone</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1">
+                  <input wire:model = "phone" type="text" class="form-control" id="exampleInputPassword1">
                 </div>
               
                 <button type="submit" class="btn btn-primary">Submit</button>
