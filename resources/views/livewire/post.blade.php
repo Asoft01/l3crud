@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 @if(!$addPost)
-                <button wire:click="addPostJ()" class="btn btn-primary btn-sm float-right">Add New Post</button>
+                <button wire:click="addPost()" class="btn btn-primary btn-sm float-right">Add New Post</button>
                 @endif
                 <div class="table-responsive">
                     <table class="table">
