@@ -1,5 +1,5 @@
 <div>
-    <div class="card">
+    <div class="card offset-3 col-6">
         <div class="card-header">
           View Customer
         </div>
