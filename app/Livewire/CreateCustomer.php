@@ -26,5 +26,6 @@ class CreateCustomer extends Component
         ]);
 
         Customer::create($validated);
+        $this->reset();
     }
 }
