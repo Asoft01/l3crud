@@ -10,7 +10,7 @@
             </div>
         </div>
     @endif
-    @include('livewire.includes.create-todo-box')
+   @include('livewire.includes.create-todo-box')
    @include('livewire.includes.search-box')
     <div id="todos-list">
         @foreach ($todos as $todo)
